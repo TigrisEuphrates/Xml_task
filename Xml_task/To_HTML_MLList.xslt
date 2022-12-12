@@ -9,11 +9,11 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 					CPUs
 					<xsl:for-each select="//CPU">
 						<li style="margin-left:2em">
-							<xsl:value-of select="//CPU/name"/>
+							<xsl:value-of select="name"/>
 						</li>
 						<ol type="1" style="list-style-type: 1; list-style: none; padding-bottom: 0;">
 							<li style="margin-left:2em">
-								<xsl:value-of select="//CPU/price"/>
+								<xsl:value-of select="price"/>
 							</li>
 						</ol>
 					</xsl:for-each>
@@ -22,11 +22,11 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 					GCards
 					<xsl:for-each select="//Graphics_Card">
 						<li style="margin-left:2em">
-							<xsl:value-of select="//Graphics_Card/name"/>
+							<xsl:value-of select="name"/>
 						</li>
 						<ol style="list-style-type: 1; list-style: none; padding-bottom: 0;">
 							<li style="margin-left:2em">
-								<xsl:value-of select="//Graphics_Card/price"/>
+								<xsl:value-of select="price"/>
 							</li>
 						</ol>
 					</xsl:for-each>
@@ -35,11 +35,11 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 					SSDs
 					<xsl:for-each select="//SSD">
 						<li style="margin-left:2em">
-							<xsl:value-of select="//SSD/name"/>
+							<xsl:value-of select="name"/>
 						</li>
 						<ol style="list-style-type: 1; list-style: none; padding-bottom: 0;">
 							<li style="margin-left:2em">
-								<xsl:value-of select="//SSD/price"/>
+								<xsl:value-of select="price"/>
 							</li>
 						</ol>
 					</xsl:for-each>

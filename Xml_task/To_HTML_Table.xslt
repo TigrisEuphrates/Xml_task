@@ -13,30 +13,30 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 					<xsl:for-each select="//CPU">
 						<tr>
 							<td>
-								<xsl:value-of select="//CPU/name"/>
+								<xsl:value-of select="name"/>
 							</td>
 							<td>
-								<xsl:value-of select="//CPU/price"/>
+								<xsl:value-of select="price"/>
 							</td>
 						</tr>
 					</xsl:for-each>
 					<xsl:for-each select="//Graphics_Card">
 						<tr>
 							<td>
-								<xsl:value-of select="//Graphics_Card/name"/>
+								<xsl:value-of select="name"/>
 							</td>
 							<td>
-								<xsl:value-of select="//Graphics_Card/price"/>
+								<xsl:value-of select="price"/>
 							</td>
 						</tr>
 					</xsl:for-each>
 					<xsl:for-each select="//SSD">
 						<tr>
 							<td>
-								<xsl:value-of select="//SSD/name"/>
+								<xsl:value-of select="name"/>
 							</td>
 							<td>
-								<xsl:value-of select="//SSD/price"/>
+								<xsl:value-of select="price"/>
 							</td>
 						</tr>
 					</xsl:for-each>

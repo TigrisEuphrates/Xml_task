@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
-<?xml-stylesheet href="To_HTML_Table.xsl" type="text/xsl" ?>
+<?xml-stylesheet type="text/xsl" ?>
 <hardware>
 	<CPUs>
 		<CPU on_sale="true">

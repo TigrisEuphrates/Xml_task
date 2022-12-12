@@ -15,28 +15,36 @@ public class Program
         //ValidateDTD("hardware.xml");
         //ValidateXSD("hardwareForXSDValidation.xml", "hardware.xsd");
         //ToText("hardware.xml");
-        //if (args.Length == 0)
-        //{
-        //    await XPathSelection("XPath_List.txt");
-        //}
-        //else
-        //{
-        //    await XPathSelection(args[0]);
-        //    if(args.Length>1)
-        //    {
-        //        TransformXML("hardware_for_xslt.xml", args[1]);
-        //    }
-        //}
+        if(args.Length>0)
+        {
+            await XPathSelection(args[0]);
+            if (args.Length == 3)
+            {
+                TransformXML("hardware_for_xslt.xml", args[1], args[2]);
+            }
+            else if (args.Length == 2)
+            {
+                TransformXML("hardware_for_xslt.xml", args[1], "xml");
+            }
+            else if(args.Length == 1)
+            {
+                TransformXML("hardware_for_xslt.xml", "To_XML_WithChanges.xslt", "xml");
+            }
 
-        TransformXML("hardware_for_xslt.xml", "To_HTML_MLList.xslt");
+        }
+        else if(args.Length == 0)
+        {
+            await XPathSelection("XPath_List.txt");
+            TransformXML("hardware_for_xslt.xml", "To_XML_WithChanges.xslt", "xml");
+        }
     }
 
 
 
-    public static void TransformXML(string inputXml, string xsltString)
+    public static void TransformXML(string inputXml, string xsltString, string format)
     {
         string txtName = xsltString.Remove(xsltString.Length-5,5);
-        txtName = txtName.Insert(txtName.Length, ".txt");
+        txtName = txtName.Insert(txtName.Length, "."+format);
         StreamWriter sW = System.IO.File.CreateText($"..\\..\\..\\{txtName}");
         sW.Close();
         Console.WriteLine($"Created File {txtName}");
