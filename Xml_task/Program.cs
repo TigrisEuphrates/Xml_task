@@ -12,9 +12,9 @@ public class Program
 {
     public static async Task Main(string[] args)
     {
-        //ValidateDTD("hardware.xml");
-        //ValidateXSD("hardwareForXSDValidation.xml", "hardware.xsd");
-        //ToText("hardware.xml");
+        ValidateDTD("hardware.xml");
+        ValidateXSD("hardwareForXSDValidation.xml", "hardware.xsd");
+        ToText("hardware.xml");
         if(args.Length>0)
         {
             await XPathSelection(args[0]);
@@ -48,15 +48,9 @@ public class Program
         StreamWriter sW = System.IO.File.CreateText($"..\\..\\..\\{txtName}");
         sW.Close();
         Console.WriteLine($"Created File {txtName}");
-
-
-
-
         XslCompiledTransform transform = new XslCompiledTransform();
         transform.Load($"..\\..\\..\\{xsltString}");
         transform.Transform($"..\\..\\..\\{inputXml}", $"..\\..\\..\\{txtName}");
-
-
     }
 
 
@@ -64,7 +58,6 @@ public class Program
 
     public static async Task XPathSelection(string XPathFile)
     {
-
         XmlDocument doc = new XmlDocument();
         doc.PreserveWhitespace = true;
         doc.Load($"..\\..\\..\\hardware.xml");
